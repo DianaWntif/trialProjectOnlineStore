@@ -2,17 +2,24 @@ import { Component } from 'react';
 
 import AppInfo from '../app-info/app-info';
 import SearchPanel from '../search-panel/search-panel';
-import AppFilter from '../app-filter/app-filter';
+import AutorizationForm from '../autorization-form/autorization-form'
 
 import './app.css';
-// import 'bootstrap/dist/css/bootstrfap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App(){
   return (
     <div className='app'>
       <AppInfo/>
-    </div>
+
+
+    <div className="navbar-user">
+            <SearchPanel />
+            <AutorizationForm />
+      </div>
+   </div>
+    
   )
 } 
 //   return (
