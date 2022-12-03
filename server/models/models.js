@@ -60,9 +60,6 @@ const Basket = sequelize.define('basket', {
 })
 
 
-//hasOne -один к одному
-
-
 User.hasOne(Basket)
 Basket.belongsTo(User)
 
@@ -72,14 +69,17 @@ ListProduct.belongsTo(Basket)//в листе внешний ключ баске�
 Product.hasMany(ListProduct)
 ListProduct.belongsTo(Product)//в листе внешний ключ продукта
 
+Product.hasMany(ProductInfo)
+ProductInfo.belongsTo(ProductInfo)
+
 TypeProduct.hasMany(Product)
 Product.belongsTo(TypeProduct)
 
 TypeProduct.hasMany(GroupCriterions)
 GroupCriterions.belongsTo(TypeProduct)
 
-TypeProduct.hasMany(Criterions)
-Criterions.belongsTo(TypeProduct)
+Criterions.hasMany(GroupCriterions)
+GroupCriterions.belongsTo(Criterions)
 
 
 module.exports = {
