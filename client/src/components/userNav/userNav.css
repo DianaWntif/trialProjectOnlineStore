@@ -1,0 +1,25 @@
+.autarization-bar {
+    width: 500px;
+    height: 50px;
+    padding: 25px;
+    background-color: #e4eef9;
+    border-radius: 2px;
+    color: #fff;
+    border-color: grey
+}
+
+#ButtonsGroup {
+    padding: 0px 25px 0px 25px;
+}
+#ButtonsGroup .group {
+    padding: 0px 25px 0px 25px;
+}
+
+#ButtonsGroup .btn-primary {
+    --bs-btn-bg: #e4eef9;
+    --bs-btn-border-color: #e4eef9;
+    --bs-btn-color: #000000;
+    --bs-btn-hover-color: #020000;
+    --bs-btn-hover-bg: #e7d514;
+    --bs-btn-hover-border-color: #e7d514;
+}

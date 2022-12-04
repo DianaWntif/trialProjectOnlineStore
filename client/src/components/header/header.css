@@ -9,3 +9,8 @@
     color: #000;
     font-weight: 600;
 }
+
+#searchFromHeader .header-navbar{
+    padding-top: 20px;
+    background-color: #e4eef9;
+}
