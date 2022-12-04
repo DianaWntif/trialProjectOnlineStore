@@ -3,7 +3,9 @@ const router = new Router()
 const userCtrler = require('../controllers/userController')
 
 router.post('/signup', userCtrler.signUp)
+//router.get('/signup', userCtrler.signUp)
 router.post('/signin', userCtrler.signIn)
+//router.get('/signin', userCtrler.signIn)
 router.get('/auth', userCtrler.isAuth)
 
 module.exports = router

@@ -7,6 +7,7 @@ const User = sequelize.define('user', {
     dadname:    { type: DataTypes.STRING, allowNull: false },
     surname:    { type: DataTypes.STRING, allowNull: false },
     mail:       { type: DataTypes.STRING, unique: true, allowNull: false },
+    password:   { type: DataTypes.STRING, unique: true, allowNull: false },
     phone:      { type: DataTypes.STRING, unique: true, allowNull: false },
     access:     { type: DataTypes.STRING, defaultValue: "User" }
 })
@@ -18,6 +19,16 @@ const Criterions = sequelize.define('criterions', {
 })
 
 const TypeProduct = sequelize.define('type_product', {
+    id:         { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name:       { type: DataTypes.STRING, allowNull: false }
+})
+
+const Category = sequelize.define('category', {
+    id:         { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
+    name:       { type: DataTypes.STRING, allowNull: false }
+})
+
+const SubCategory = sequelize.define('subcategory', {
     id:         { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
     name:       { type: DataTypes.STRING, allowNull: false }
 })
@@ -81,6 +92,11 @@ GroupCriterions.belongsTo(TypeProduct)
 Criterions.hasMany(GroupCriterions)
 GroupCriterions.belongsTo(Criterions)
 
+Category.hasMany(SubCategory)
+SubCategory.belongsTo(Category)
+
+SubCategory.hasMany(TypeProduct)
+TypeProduct.belongsTo(SubCategory)
 
 module.exports = {
     User,
@@ -90,7 +106,9 @@ module.exports = {
     Product,
     ListProduct,
     Basket,
-    Order
+    Order,
+    Category,
+    SubCategory
 }
 
 

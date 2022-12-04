@@ -1,11 +1,11 @@
 import { Component } from 'react';
 
 import Header from '../header/header';
-import SearchPanel from '../search-panel/search-panel';
-import UserNav from '../userNav/userNav'
+import ModalSignIn from "../modalDialog/modalDialog";
 
 import './app.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 function App(){
@@ -13,18 +13,13 @@ function App(){
     <div className='app'>
         <Header/>
    </div>
-    
   )
 } 
-//   return (
-//     // <div className="app">
-//     //   <AppInfo
-//     //    />
 
-//     //   <div className="search-panel">
-//     //       <SearchPanel/>
-//     //       <AppFilter/>
-//   )
-// }
-
+/*
+ <div className='app'>
+        <Header/>
+        <ModalSignIn/>
+   </div>
+ */
 export default App;
